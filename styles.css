@@ -1,0 +1,39 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Space Mono", sans-serif;
+  transition-duration: 200ms;
+  color: white;
+  background: #14292c;
+}
+
+.nav-header {
+  margin-bottom: 0;
+  color: white;
+}
+
+.nav-pills {
+  color: white;
+}
+
+.first-container {
+  display: flex;
+  min-width: fit-window;
+}
+
+.desc-container {
+  border: 2px solid red;
+  min-height: 700px;
+  flex: 1;
+}
+
+.image-container {
+  border: 2px solid green;
+  flex: 1;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+}
