@@ -4,8 +4,18 @@
   padding: 0;
   font-family: "Space Mono", sans-serif;
   transition-duration: 200ms;
-  color: white;
+}
+
+header,
+#intro {
   background: #14292c;
+  padding-left: 10%;
+  padding-right: 10%;
+  color: white;
+}
+
+body {
+  padding: 0;
 }
 
 .nav-header {
@@ -20,20 +30,68 @@
 .first-container {
   display: flex;
   min-width: fit-window;
+  background: #14292c;
+  color: white;
 }
 
 .desc-container {
-  border: 2px solid red;
+  display: flex;
+  flex-direction: column;
+  /* border: 2px solid red; */
   min-height: 700px;
   flex: 1;
+  justify-content: center;
+  align-items: flex-start;
+  font-size: 16px;
+}
+
+.desc-container h2 {
+  font-weight: 600;
+}
+
+.button-container {
+  display: flex;
+  gap: 20px;
 }
 
 .image-container {
-  border: 2px solid green;
+  /* border: 2px solid green; */
   flex: 1;
 }
 
 img {
   height: 100%;
   width: 100%;
+}
+
+.clear-btn {
+  background-color: none;
+}
+
+/* .............About section.......... */
+.about-container {
+  display: flex;
+  background: white;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.full-image {
+  flex: 1;
+}
+
+.about-section {
+  flex: 1;
+  padding-left: 10px;
+  color: black;
+  box-sizing: border-box;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.red {
+  color: red;
+  font-weight: 500;
 }
