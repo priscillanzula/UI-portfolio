@@ -1,3 +1,13 @@
+// Ensure consistent font across the entire page
+document.addEventListener("DOMContentLoaded", () => {
+  const consistentFont = "Space Mono, sans-serif"; // Define the font family
+
+  // Apply the font to all elements except Font Awesome icons
+  const allElements = document.querySelectorAll("*:not(.fab):not(.fas):not(i)");
+  allElements.forEach((element) => {
+    element.style.fontFamily = consistentFont;
+  });
+});
 
 // Toggle visibility of additional services
 document.getElementById("more-services-link").addEventListener("click", function (e) {
@@ -15,11 +25,10 @@ document.getElementById("more-services-link").addEventListener("click", function
   });
 
   // Open the popup when "Contact" is clicked
-document.querySelector('a[href="#contact"]').addEventListener("click", function (e) {
+  document.querySelector('a[href="#contact"]').addEventListener("click", function (e) {
     e.preventDefault();
     document.getElementById("contact-popup").classList.remove("hidden");
   });
-  
   // Close the popup when the close button is clicked
   document.querySelector(".close-popup").addEventListener("click", function () {
     document.getElementById("contact-popup").classList.add("hidden");
@@ -31,18 +40,42 @@ document.querySelector('a[href="#contact"]').addEventListener("click", function 
       this.classList.add("hidden");
     }
   });
-  // Dark Mode Toggle
-const darkModeToggle = document.createElement("button");
-darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>'; // Icon for dark mode
-darkModeToggle.classList.add("dark-mode-toggle");
-document.querySelector("#header").appendChild(darkModeToggle);
+
+// Show Contact Form Popup when "Hire Me" navigation link is clicked
+function showContactPopup() {
+  document.getElementById("contact-popup").classList.remove("hidden");
+}
+
+document.getElementById("hire-me-nav").addEventListener("click", (e) => {
+  e.preventDefault();
+  showContactPopup();
+});
+
+document.getElementById("hire-me-btn").addEventListener("click", showContactPopup);
+
+// Close the popup when clicking outside the form or on the close button
+document.getElementById("contact-popup").addEventListener("click", (e) => {
+  if (e.target === document.getElementById("contact-popup")) {
+    document.getElementById("contact-popup").classList.add("hidden");
+  }
+});
+
+document.querySelector(".close-popup").addEventListener("click", () => {
+  document.getElementById("contact-popup").classList.add("hidden");
+});
+
+// Dark Mode Toggle
+const darkModeToggle = document.getElementById("dark-mode-toggle");
 
 darkModeToggle.addEventListener("click", () => {
   document.body.classList.toggle("dark-mode");
+  const icon = darkModeToggle.querySelector("i");
   if (document.body.classList.contains("dark-mode")) {
-    darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>'; // Change to sun icon for light mode
+    icon.classList.remove("fa-moon");
+    icon.classList.add("fa-sun"); // Change to sun icon for light mode
   } else {
-    darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>'; // Change back to moon icon
+    icon.classList.remove("fa-sun");
+    icon.classList.add("fa-moon"); // Change back to moon icon
   }
 });
 
