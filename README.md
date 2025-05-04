@@ -45,7 +45,7 @@ Feel free to connect with me!
 
 * **Email:** danielpriscilla61@gmail.com
 * **LinkedIn:** www.linkedin.com/in/priscilla-nzula
-* **GitHub:**https://github.com/priscillanzula
+* **GitHub:** https://github.com/priscillanzula
 
 
 ## License
