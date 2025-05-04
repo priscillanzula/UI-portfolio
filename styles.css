@@ -74,9 +74,29 @@ body, .desc-container h2, .about-description-container p {
   display: flex;
   gap: 20px;
 }
-
-/* Responsive Button Container */
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+}
+/* Responsive hero*/
 @media (max-width: 768px) {
+  .first-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .desc-container {
+    margin-bottom: 20px;
+  }
+
+  .image-container img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
   .button-container {
     flex-direction: column;
     gap: 10px;
@@ -84,14 +104,11 @@ body, .desc-container h2, .about-description-container p {
   }
 }
 
-.image-container {
-  /* border: 2px solid green; */
-  flex: 1;
-width: 100%;
-height: 300px;
-  
-}
 
+img {
+  max-width: 100%;
+  height: auto;
+}
 .nav-header {
   margin: 0; 
   padding: 0; 
@@ -189,17 +206,27 @@ height: 300px;
 /* Responsive About Section */
 @media (max-width: 768px) {
   .about-container {
+    display: flex;
     flex-direction: column;
     text-align: center;
+    align-items: center;
+    padding: 20px;
   }
 
   .about-image-container img {
     max-width: 100%;
     height: auto;
+    margin-bottom: 20px;
   }
 
   .about-description-container {
-    padding-left: 0;
+    padding: 0;
+  }
+  .contact-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
   }
 }
 
@@ -316,8 +343,10 @@ height: 300px;
 /* Responsive Services Section */
 @media (max-width: 768px) {
   .services-cards {
+    display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 20px;
   }
 
   .service-card {
@@ -440,13 +469,16 @@ height: 300px;
 /* Responsive Skills Section */
 @media (max-width: 768px) {
   .skills-content {
+    display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 20px;
   }
 
   .skills-images img {
     max-width: 100%;
     height: auto;
+    margin-bottom: 20px;
   }
 
   .skills-details {
@@ -521,8 +553,10 @@ height: 300px;
 /* Responsive Work Section */
 @media (max-width: 768px) {
   .work-cards {
+    display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 20px;
   }
 
   .work-card {
@@ -711,12 +745,22 @@ footer {
   .footer-top {
     flex-direction: column;
     text-align: center;
+    gap: 10px;
   }
-
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
   .footer-bottom {
     flex-direction: column;
     text-align: center;
     gap: 10px;
+  }
+  .footer-social {
+    justify-content: center;
   }
 }
 /* Dark Mode Styling */
@@ -778,13 +822,24 @@ body.dark-mode .nav-pills .nav-link.active {
 
 /* Responsive Navigation for Small Screens */
 @media (max-width: 768px) {
+  #header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .header-logo {
+    text-align: center;
+    margin-bottom: 10px;
+  }
   .nav-pills {
     flex-direction: column;
     gap: 10px;
-    display: none; /* Hide by default */
+    display: none; 
     background-color: #14292c;
     position: absolute;
-    top: 60px; /* Below the fixed header */
+    top: 60px; 
     left: 0;
     width: 100%;
     padding: 10px 0;
@@ -792,10 +847,11 @@ body.dark-mode .nav-pills .nav-link.active {
   }
 
   .nav-pills.show {
-    display: flex; /* Show when toggled */
+    display: flex; 
   }
 
   .nav-toggle {
     display: block;
+    margin-top: 10px;
   }
 }
