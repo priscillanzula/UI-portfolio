@@ -2,7 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Space Mono", sans-serif;
+  /* font-family: "Space Mono", sans-serif; */
   transition-duration: 200ms;
 
 }
@@ -29,7 +29,7 @@
 
 /* Consolidated font-family and color rules */
 body, .desc-container h2, .about-description-container p {
-  font-family: "Space Mono", sans-serif;
+  /* font-family: "Space Mono", sans-serif; */
   color:white
 }
 /* Header Logo Styling */
@@ -51,7 +51,7 @@ body, .desc-container h2, .about-description-container p {
 .first-container {
   display: flex;
   min-width: 600px;
-  min-width: fit-window;
+  /* min-width: fit-window; */
   background: #14292c;
   color: white;
 }
@@ -180,7 +180,7 @@ height: 300px;
 }
 
 .about-description-container h2 {
-  font-size: 28px;
+  font-size: 24px;
   color: #14292c; 
   margin-bottom: 10px;
 }
@@ -191,12 +191,12 @@ height: 300px;
   margin-bottom: 20px;
 }
 
-/* .about-description-container p {
+.about-description-container p {
   font-size: 16px;
   color: #333;
   line-height: 1.6;
   margin-bottom: 20px;
-} */
+} 
 
 /* Contact Details Styling */
 .contact-details {
@@ -252,7 +252,7 @@ height: 300px;
 
 /* Services Section Styling */
 #services {
-  background-color: #f8f9fa; 
+  background-color: #e8eff7; 
   padding: 40px 20px;
   text-align: center;
 }
@@ -407,7 +407,7 @@ height: 300px;
 
 /* My Work Section Styling */
 #my-work {
-  background-color: #f8f9fa;
+  background-color:  #e8eff7; 
   padding: 40px 20px;
   text-align: center;
 }
@@ -731,16 +731,16 @@ body.dark-mode .nav-pills .nav-link.active {
   background-color: #218838;
 }
 
-.nav-pills {
+/* .nav-pills {
   display: flex;
   gap: 20px;
-}
+} */
 
-.nav-pills.show {
-  display: flex;
+/* .nav-pills.show {
+  display: flex; */
   /* flex-direction: column;
   gap: 10px; */
-}
+/* } */
 
 /* @media (max-width: 768px) {
   .nav-pills {
@@ -754,32 +754,32 @@ body.dark-mode .nav-pills .nav-link.active {
   }
 } */
 /* Responsive Navigation for Small Screens */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .nav-pills {
     flex-direction: column;
     gap: 10px;
     display: none; /* Hide by default */
-    background-color: #14292c;
-    position: absolute;
-    top: 60px; /* Below the fixed header */
-    left: 0;
+    /* background-color: #14292c; */
+    /* position: absolute; */
+    /* top: 60px; Below the fixed header */
+    /* left: 0;
     width: 100%;
     padding: 10px 0;
-    z-index: 999;
-  }
+    z-index: 999; */ 
+  /* }
 .clear-btn {
   background-color: none;
-}
+} */
 
 /* .............About section.......... */
-.about-container {
+/* .about-container {
   display: flex;
   background: white;
   padding-left: 10%;
   padding-right: 10%;
-}
+} */
 
-.full-image {
+/* .full-image {
   flex: 1;
 }
 
@@ -797,5 +797,54 @@ body.dark-mode .nav-pills .nav-link.active {
 .red {
   color: red;
   font-weight: 500;
-}
+} */
 
+/* Responsive Navigation for Small Screens */
+@media (max-width: 768px) {
+  .nav-pills {
+    flex-direction: column;
+    gap: 10px;
+    display: none; /* Hide by default */
+    background-color: #14292c;
+    position: absolute;
+    top: 60px; /* Below the fixed header */
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+    z-index: 999;
+  }
+
+  .nav-pills.show {
+    display: flex; /* Show when toggled */
+  }
+
+  .nav-toggle {
+    display: block;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  .nav-toggle:hover {
+    background-color: #388e3c;
+  }
+
+  .button-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .services-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+}
