@@ -45,11 +45,11 @@ Feel free to connect with me!
 
 * **Email:** danielpriscilla61@gmail.com
 * **LinkedIn:** www.linkedin.com/in/priscilla-nzula
-* **GitHub:**[ [Your GitHub Profile URL]](https://github.com/priscillanzula)
+* **GitHub:**https://github.com/priscillanzula
 
 
 ## License
 
  MIT License
 
-Copyright (c) 2024 Nzula Priscilla
+Copyright (c) 2025 Nzula Priscilla
