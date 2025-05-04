@@ -75,6 +75,15 @@ body, .desc-container h2, .about-description-container p {
   gap: 20px;
 }
 
+/* Responsive Button Container */
+@media (max-width: 768px) {
+  .button-container {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+}
+
 .image-container {
   /* border: 2px solid green; */
   flex: 1;
@@ -89,22 +98,9 @@ height: 300px;
   background-color: #14292c; 
   color: white; 
   border-bottom: none !important; }
-/* Navigation Bar Styling */
-.nav-pills {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-}
 
-/* #dark-mode-toggle {
-  margin-left: 20px;
-  font-size: 16px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-} */
-* Dark Mode Toggle Button */
+
+/* Dark Mode Toggle Button */
 #dark-mode-toggle {
   font-size: 16px;
   display: inline-flex;
@@ -125,44 +121,86 @@ height: 300px;
   font-size: 18px;
 }
 
-/* Responsive Styling */
-/* @media (max-width: 768px) {
-  .nav-pills {
-    flex-direction: column;
-    gap: 10px;
-  }
 
-  #dark-mode-toggle {
-    margin-left: 0;
-    align-self: flex-start;
-  }
-} */
+
 .nav-pills .nav-link {
-  color: white !important;
+  color: white;
   text-decoration: none;
   padding: 5px 10px;
   border-radius: 5px;
   transition: background-color 0.3s ease;
 }
 
-
 .nav-pills .nav-link.active {
-  background-color: #2b683a; 
-  color: white !important; 
+  background-color: #4caf50;
+  color: #ffffff;
+}
+.nav-pills.show {
+
+  flex-direction: column;
+  background-color: #14292c;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  padding: 10px 0;
+  z-index: 999;
+}
+.nav-toggle {
+  display: none;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
+
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: block;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  .nav-toggle:hover {
+    background-color: #388e3c;
+  }
+}
 .fs-4{
   color: white;
 }
 
-/* About Section Styling */
 .about-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 20px;
   padding: 40px;
-  background-color: white; 
+  background-color: white;
+}
+
+/* Responsive About Section */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-image-container img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .about-description-container {
+    padding-left: 0;
+  }
 }
 
 .about-image-container img {
@@ -272,7 +310,20 @@ height: 300px;
   display: flex;
   justify-content: space-between;
   gap: 20px;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
+}
+
+/* Responsive Services Section */
+@media (max-width: 768px) {
+  .services-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .service-card {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
 }
 
 .service-card {
@@ -351,12 +402,7 @@ height: 300px;
   flex-wrap: wrap;
 }
 
-.skills-images {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
+
 
 .skills-images img {
   width: 100%;
@@ -391,7 +437,22 @@ height: 300px;
   color: #333;
   margin-bottom: 5px;
 }
+/* Responsive Skills Section */
+@media (max-width: 768px) {
+  .skills-content {
+    flex-direction: column;
+    align-items: center;
+  }
 
+  .skills-images img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .skills-details {
+    text-align: center;
+  }
+}
 .progress-bar {
   background-color: #e9ecef;
   border-radius: 10px;
@@ -457,7 +518,18 @@ height: 300px;
   color: #555;
   margin: 0 15px 15px;
 }
+/* Responsive Work Section */
+@media (max-width: 768px) {
+  .work-cards {
+    flex-direction: column;
+    align-items: center;
+  }
 
+  .work-card {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
 .tools {
   display: flex;
   flex-wrap: wrap;
@@ -634,20 +706,30 @@ footer {
 .footer-social a:hover {
   color: #28a745; 
 }
-/* Dark Mode Styling */
-body.dark-mode {
-  background-color: #121212; /* Dark background for the entire page */
-  color: #ffffff; /* Light text for readability */
+/* Responsive Footer */
+@media (max-width: 768px) {
+  .footer-top {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
 }
+/* Dark Mode Styling */
+ body.dark-mode {
+  background-color: #121212; 
+   color: #ffffff; 
+ } 
 
 body.dark-mode a {
-  color: #4caf50; /* Green links for better contrast */
+  color: #4caf50; 
 }
 
-/* body.dark-mode .header-logo i,
-body.dark-mode .footer-logo i {
-  color: #4caf50; /* Green icons for header and footer */
-/* } */ 
+
 body.dark-mode .btn-success {
   background-color: #4caf50;
   border-color: #4caf50;
@@ -658,146 +740,41 @@ body.dark-mode .btn-success:hover {
   border-color: #388e3c;
 }
 
-/* body.dark-mode .btn-outline-success {
-  color: #ffffff;
-  border-color: #ffffff;
-} */
-body.dark-mode .btn-outline-success:hover {
-  background-color: #ffffff;
-  color: #121212;
-}
 
-body.dark-mode .nav-pills .nav-link {
-  color: #ffffff !important; /* Light text for navigation links */
-}
 
 
 body.dark-mode .popup-content {
-  background-color: #1e1e1e; /* Dark background for cards and popups */
-  color: #ffffff; /* Light text */
-  border: 1px solid #333; /* Subtle border for separation */
+  background-color: #1e1e1e;
+  color: #ffffff;
+  border: 1px solid #333; 
 }
 
 body.dark-mode .popup-content button {
-  background-color: #4caf50; /* Green buttons */
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 body.dark-mode .popup-content button:hover {
-  background-color: #388e3c; /* Darker green on hover */
+  background-color: #388e3c;
 }
 
 body.dark-mode .footer-container {
-  background-color: #1e1e1e; /* Dark footer background */
-  color: #ffffff; /* Light footer text */
+  background-color: #1e1e1e; 
+  color: #ffffff; 
 }
 body.dark-mode .nav-pills .nav-link {
-  color: #ffffff !important; /* Light text for navigation links */
+  color: #ffffff;
 }
 
 body.dark-mode .nav-pills .nav-link.active {
-  background-color: #4caf50; /* Highlight active link */
-  color: #ffffff !important;
+  background-color: #4caf50;
+  color: #ffffff;
 }
-/* Dark Mode Toggle Button */
-/* .dark-mode-toggle {
-  position: absolute;
-  top: 10px;
-  right: 20px;
-  background: none;
-  border: none;
-  font-size: 24px;
-  color: white;
-  cursor: pointer;
-  z-index: 1000;
-}
-
-.dark-mode-toggle:hover {
-  color: #4caf50;
-} */
-
-/* Responsive Navigation Menu */
-.nav-toggle {
-  display: none;
-  background-color: #28a745;
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  font-size: 18px;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-.nav-toggle:hover {
-  background-color: #218838;
-}
-
-/* .nav-pills {
-  display: flex;
-  gap: 20px;
-} */
-
-/* .nav-pills.show {
-  display: flex; */
-  /* flex-direction: column;
-  gap: 10px; */
-/* } */
-
-/* @media (max-width: 768px) {
-  .nav-pills {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  #dark-mode-toggle {
-    margin-left: 0;
-    align-self: flex-start;
-  }
-} */
-/* Responsive Navigation for Small Screens */
-/* @media (max-width: 768px) {
-  .nav-pills {
-    flex-direction: column;
-    gap: 10px;
-    display: none; /* Hide by default */
-    /* background-color: #14292c; */
-    /* position: absolute; */
-    /* top: 60px; Below the fixed header */
-    /* left: 0;
-    width: 100%;
-    padding: 10px 0;
-    z-index: 999; */ 
-  /* }
-.clear-btn {
-  background-color: none;
-} */
-
-/* .............About section.......... */
-/* .about-container {
-  display: flex;
-  background: white;
-  padding-left: 10%;
-  padding-right: 10%;
-} */
-
-/* .full-image {
-  flex: 1;
-}
-
-.about-section {
-  flex: 1;
-  padding-left: 10px;
-  color: black;
-  box-sizing: border-box;
-}
-
-.bold {
-  font-weight: 600;
-}
-
-.red {
-  color: red;
-  font-weight: 500;
-} */
 
 /* Responsive Navigation for Small Screens */
 @media (max-width: 768px) {
@@ -820,31 +797,5 @@ body.dark-mode .nav-pills .nav-link.active {
 
   .nav-toggle {
     display: block;
-    background-color: #4caf50;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    font-size: 18px;
-    cursor: pointer;
-    border-radius: 5px;
-  }
-
-  .nav-toggle:hover {
-    background-color: #388e3c;
-  }
-
-  .button-container {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .about-container {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .services-cards {
-    flex-direction: column;
-    align-items: center;
   }
 }
