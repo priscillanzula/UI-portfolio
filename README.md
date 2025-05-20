@@ -1,4 +1,4 @@
-# UI Portfolio
+## Portfolio
 
 This repository hosts the code for my UI portfolio website, showcasing my skills and projects in user interface design and data analysis. You can view the live website [here](https://priscillanzula.github.io/UI-portfolio/).
 
