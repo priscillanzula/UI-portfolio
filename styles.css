@@ -2,7 +2,6 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  /* font-family: "Space Mono", sans-serif; */
   transition-duration: 200ms;
 }
 
@@ -12,11 +11,10 @@
   top: 0;
   left: 0;
   width: 100%;
-  /* z-index: 1000; */
-  background-color: #14292c; /* Background color for the navbar */
+  background-color: #14292c; 
   color: white;
   padding: 10px 20px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
 }
 #intro {
   background: #14292c;
@@ -29,7 +27,6 @@
 body,
 .desc-container h2,
 .about-description-container p {
-  /* font-family: "Space Mono", sans-serif; */
   color: white;
 }
 /* Header Logo Styling */
@@ -50,7 +47,6 @@ body,
 }
 .first-container {
   display: flex;
-  /* min-width: fit-window; */
   background: #14292c;
   color: white;
 }
@@ -94,14 +90,40 @@ button {
     margin-bottom: 30px;
   }
 
-  .profession {
-    align-self: center;
-    font-weight: 600;
-    padding-top: 5px;
-    font-size: 18px;
-    color: #218838;
-  }
+  
+/* Typing Animation Styling */
+.profession {
+  position: relative;
+  font-weight: 600;
+  padding-top: 5px;
+  font-size: 42px;
+  color: hsl(133, 61%, 33%);
+  overflow: hidden;
+  white-space: nowrap;
+  display: inline-block;
+}
 
+.profession::after {
+  content: '|';
+  position: absolute;
+  right: 0;
+  animation: blink 0.7s infinite;
+}
+
+/* Blinking cursor animation */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.profession.typing {
+  border-right: none;
+}
+
+.profession-container {
+  display: inline-block;
+  min-width: 220px; 
+}
   .image-container img {
     width: auto;
     height: auto;
@@ -169,7 +191,7 @@ img {
   left: 0;
   width: 100%;
   padding: 10px 0;
-  /* z-index: 999; */
+  
 }
 .nav-toggle {
   display: none;
@@ -368,7 +390,6 @@ img {
   border-radius: 10px;
   padding: 20px;
   flex: 1;
-  /* max-width: 300px; */
   text-align: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -453,7 +474,7 @@ img {
 .skills-content > div:nth-child(2) img {
    width: 100%; 
   max-width: 150px;
-  height: 200px;
+  height: 300px;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -497,7 +518,7 @@ img {
   
   .skills-image img {
     width: 100%;
-    height: 150px;
+    height: 170px;
   }
 
   .skills-details {
@@ -622,7 +643,7 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* z-index: 1000; */
+ 
 }
 
 .popup.hidden {
@@ -782,7 +803,7 @@ footer {
     justify-content: center;
   }
 }
-/* Dark Mode Styling - Comprehensive approach */
+/* Dark Mode Styling */
 body.dark-mode {
   background-color: #121212;
   color: #ffffff;

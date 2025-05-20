@@ -128,9 +128,78 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Ensure Consistent Font Across the Entire Page
-  const consistentFont = "Space Mono, sans-serif"; // Define the font family
+  const consistentFont = "Space Mono, sans-serif"; 
   const allElements = document.querySelectorAll("*:not(.fab):not(.fas):not(i)");
   allElements.forEach((element) => {
     element.style.fontFamily = consistentFont;
   });
 });
+
+// Setup typing animation for profession title
+document.addEventListener("DOMContentLoaded", function() {
+  setupTypingAnimation();
+});
+
+  // Typing Animation for profession title
+function setupTypingAnimation() {
+  const professionElement = document.querySelector('.profession');
+  if (!professionElement) return;
+  
+  // Wrap the profession in a container for better width control
+  const container = document.createElement('div');
+  container.className = 'profession-container';
+  professionElement.parentNode.insertBefore(container, professionElement);
+  container.appendChild(professionElement);
+  
+  // Add typing class to enable animation
+  professionElement.classList.add('typing');
+  
+  // Profession titles to rotate through
+  const titles = [
+    'Data Analyst',
+    'Data Scientist',
+    'Web Developer'
+  ];
+  
+  let titleIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+  let typingSpeed = 160; // Base typing speed (milliseconds)
+  
+  function typeEffect() {
+    const currentTitle = titles[titleIndex];
+    
+    if (isDeleting) {
+      // Deleting characters
+      charIndex--;
+      typingSpeed = 80; // Faster when deleting
+    } else {
+      // Typing characters
+      charIndex++;
+      typingSpeed = 200; // Normal speed when typing
+    }
+    
+    // Update the text content
+    professionElement.textContent = currentTitle.substring(0, charIndex);
+    
+    // If completed typing the current title
+    if (!isDeleting && charIndex === currentTitle.length) {
+      // Pause at the end of typing
+      isDeleting = true;
+      typingSpeed = 200; // Wait before starting to delete
+    } 
+    // If completed deleting
+    else if (isDeleting && charIndex === 0) {
+      isDeleting = false;
+      // Move to next title
+      titleIndex = (titleIndex + 1) % titles.length;
+      typingSpeed = 500; // Pause before typing the next title
+    }
+    
+    // Schedule the next frame
+    setTimeout(typeEffect, typingSpeed);
+  }
+  
+  // Start the typing animation
+  setTimeout(typeEffect, 1000); // Initial delay
+}
