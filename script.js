@@ -135,19 +135,35 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// Setup typing animation for profession title
+// Improved typing animation for better mobile display
 document.addEventListener("DOMContentLoaded", function() {
   setupTypingAnimation();
 });
 
-// Typing Animation for profession title
+// Enhanced Typing Animation for profession title
 function setupTypingAnimation() {
   const professionElement = document.querySelector('.profession');
   if (!professionElement) return;
   
-  // Make sure the profession element is styled properly
+  // Check screen width and adapt typing animation accordingly
+  const isMobile = window.innerWidth <= 768;
+  
+  // Make sure the profession element is styled properly with responsive design in mind
   professionElement.style.fontFamily = '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif';
-  professionElement.style.fontSize = '42px';
+  
+  // Responsive font size based on screen width
+  if (isMobile) {
+    professionElement.style.fontSize = '24px';
+    professionElement.style.lineHeight = '1.3';
+    professionElement.style.whiteSpace = 'normal';
+    professionElement.style.overflow = 'visible';
+    professionElement.style.display = 'block';
+    professionElement.style.width = '100%';
+  } else {
+    professionElement.style.fontSize = '42px';
+    professionElement.style.whiteSpace = 'nowrap'; // Only nowrap on desktop
+  }
+  
   professionElement.style.color = 'hsl(133, 61%, 33%)';
   professionElement.style.fontWeight = '600';
   
@@ -158,7 +174,6 @@ function setupTypingAnimation() {
   const titles = [
     'Data Analyst',
     'Data Scientist'
-    
   ];
   
   let titleIndex = 0;
@@ -200,6 +215,23 @@ function setupTypingAnimation() {
     setTimeout(typeEffect, typingSpeed);
   }
   
-  // Start the typing animation
+  // Start the typing animation with a slight delay
   setTimeout(typeEffect, 1000); // Initial delay
+  
+  // Add resize listener to adjust styling if window is resized
+  window.addEventListener('resize', function() {
+    const isMobileNow = window.innerWidth <= 768;
+    
+    if (isMobileNow) {
+      professionElement.style.fontSize = '24px';
+      professionElement.style.lineHeight = '1.3';
+      professionElement.style.whiteSpace = 'normal';
+      professionElement.style.overflow = 'visible';
+      professionElement.style.display = 'block';
+      professionElement.style.width = '100%';
+    } else {
+      professionElement.style.fontSize = '42px';
+      professionElement.style.whiteSpace = 'nowrap';
+    }
+  });
 }
