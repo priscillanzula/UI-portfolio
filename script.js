@@ -140,16 +140,16 @@ document.addEventListener("DOMContentLoaded", function() {
   setupTypingAnimation();
 });
 
-  // Typing Animation for profession title
+// Typing Animation for profession title
 function setupTypingAnimation() {
   const professionElement = document.querySelector('.profession');
   if (!professionElement) return;
   
-  // Wrap the profession in a container for better width control
-  const container = document.createElement('div');
-  container.className = 'profession-container';
-  professionElement.parentNode.insertBefore(container, professionElement);
-  container.appendChild(professionElement);
+  // Make sure the profession element is styled properly
+  professionElement.style.fontFamily = '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif';
+  professionElement.style.fontSize = '42px';
+  professionElement.style.color = 'hsl(133, 61%, 33%)';
+  professionElement.style.fontWeight = '600';
   
   // Add typing class to enable animation
   professionElement.classList.add('typing');
@@ -157,8 +157,8 @@ function setupTypingAnimation() {
   // Profession titles to rotate through
   const titles = [
     'Data Analyst',
-    'Data Scientist',
-    'Web Developer'
+    'Data Scientist'
+    
   ];
   
   let titleIndex = 0;
@@ -186,7 +186,7 @@ function setupTypingAnimation() {
     if (!isDeleting && charIndex === currentTitle.length) {
       // Pause at the end of typing
       isDeleting = true;
-      typingSpeed = 200; // Wait before starting to delete
+      typingSpeed = 1500; // Wait longer before starting to delete
     } 
     // If completed deleting
     else if (isDeleting && charIndex === 0) {
