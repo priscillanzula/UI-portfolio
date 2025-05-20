@@ -60,6 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const hireMeNav = document.getElementById("hire-me-nav");
   const hireMeBtn = document.getElementById("hire-me-btn");
+  const hireMeAbout = document.getElementById("hire-me");
 
   if (hireMeNav) {
     hireMeNav.addEventListener("click", (e) => {
@@ -75,7 +76,9 @@ document.addEventListener("DOMContentLoaded", () => {
   if (closePopupButton) {
     closePopupButton.addEventListener("click", closeContactPopup);
   }
-
+  if (hireMeAbout) {
+    hireMeAbout.addEventListener("click", showContactPopup);
+  }
   if (contactPopup) {
     contactPopup.addEventListener("click", (e) => {
       if (e.target === contactPopup) {
