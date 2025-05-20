@@ -782,52 +782,25 @@ footer {
     justify-content: center;
   }
 }
-/* Dark Mode Styling */
+/* Dark Mode Styling - Comprehensive approach */
 body.dark-mode {
   background-color: #121212;
   color: #ffffff;
 }
 
-body.dark-mode a {
-  color: #4caf50;
-}
-
-body.dark-mode .btn-success {
-  background-color: #4caf50;
-  border-color: #4caf50;
-}
-
-body.dark-mode .btn-success:hover {
-  background-color: #388e3c;
-  border-color: #388e3c;
-}
-
-body.dark-mode .popup-content {
+/* Header and Navigation in Dark Mode */
+body.dark-mode #header {
   background-color: #1e1e1e;
   color: #ffffff;
-  border: 1px solid #333;
+  border-bottom-color: #333;
 }
 
-body.dark-mode .popup-content button {
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-body.dark-mode .popup-content button:hover {
-  background-color: #388e3c;
-}
-
-body.dark-mode .footer-container {
-  background-color: #1e1e1e;
-  color: #ffffff;
-}
 body.dark-mode .nav-pills .nav-link {
   color: #ffffff;
+}
+
+body.dark-mode .nav-pills .nav-link:hover {
+  background-color: #2c2c2c;
 }
 
 body.dark-mode .nav-pills .nav-link.active {
@@ -835,6 +808,148 @@ body.dark-mode .nav-pills .nav-link.active {
   color: #ffffff;
 }
 
+/* Intro Section in Dark Mode */
+body.dark-mode #intro {
+  background-color: #1e1e1e;
+}
+
+/* About Section in Dark Mode */
+body.dark-mode .about-container {
+  background-color: #1e1e1e;
+}
+
+body.dark-mode .about-description-container h2,
+body.dark-mode .about-description-container h3,
+body.dark-mode .about-description-container p,
+body.dark-mode .contact-column p,
+body.dark-mode .social-links p {
+  color: #ffffff;
+}
+
+body.dark-mode .contact-column a {
+  color: #4caf50;
+}
+
+/* Services Section in Dark Mode */
+body.dark-mode #services {
+  background-color: #121212;
+}
+
+body.dark-mode #services h2 {
+  color: #ffffff;
+}
+
+body.dark-mode .service-card {
+  background-color: #1e1e1e;
+  border-color: #333;
+}
+
+body.dark-mode .service-card h3 {
+  color: #ffffff;
+}
+
+body.dark-mode .service-card p {
+  color: #ccc;
+}
+
+body.dark-mode .more-services {
+  color: #4caf50;
+}
+
+/* Skills Section in Dark Mode */
+body.dark-mode #skills {
+  background-color: #121212;
+}
+
+body.dark-mode #skills h2,
+body.dark-mode .skills-details h3 {
+  color: #ffffff;
+}
+
+body.dark-mode .skills-details p,
+body.dark-mode .skill p {
+  color: #ccc;
+}
+
+body.dark-mode .progress-bar {
+  background-color: #2c2c2c;
+}
+
+/* My Work Section in Dark Mode */
+body.dark-mode #my-work {
+  background-color: #121212;
+}
+
+body.dark-mode #my-work h2 {
+  color: #ffffff;
+}
+
+body.dark-mode .work-card {
+  background-color: #1e1e1e;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .work-card h3 {
+  color: #ffffff;
+}
+
+body.dark-mode .work-card p {
+  color: #ccc;
+}
+
+body.dark-mode .github-link {
+  color: #ccc;
+}
+
+body.dark-mode .github-link:hover {
+  color: #4caf50;
+}
+
+/* Contact Popup in Dark Mode */
+body.dark-mode .popup-content {
+  background-color: #1e1e1e;
+  color: #ffffff;
+  border: 1px solid #333;
+}
+
+body.dark-mode .popup-content h2 {
+  color: #ffffff;
+}
+
+body.dark-mode .popup-content input,
+body.dark-mode .popup-content textarea {
+  background-color: #2c2c2c;
+  border-color: #444;
+  color: #ffffff;
+}
+
+body.dark-mode .popup-content button {
+  background-color: #4caf50;
+  color: white;
+}
+
+body.dark-mode .popup-content button:hover {
+  background-color: #388e3c;
+}
+
+body.dark-mode .close-popup {
+  color: #ccc;
+}
+
+/* Footer in Dark Mode */
+body.dark-mode footer,
+body.dark-mode .footer-container {
+  background-color: #1e1e1e;
+}
+
+body.dark-mode .footer-logo h3 {
+  color: #ffffff;
+}
+
+body.dark-mode .footer-contact p,
+body.dark-mode .footer-bottom p {
+  color: #ccc;
+}
 /* Responsive Navigation for Small Screens */
 @media (max-width: 768px) {
   #header {

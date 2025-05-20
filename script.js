@@ -1,15 +1,55 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Dark Mode Toggle
+  // Dark Mode Toggle - Enhanced
   const darkModeToggle = document.getElementById("dark-mode-toggle");
-  if (darkModeToggle) {
-    darkModeToggle.addEventListener("click", () => {
-      document.body.classList.toggle("dark-mode");
+  
+  // Check for saved dark mode preference
+  const isDarkMode = localStorage.getItem("darkMode") === "enabled";
+  
+  // Apply dark mode if previously enabled
+  if (isDarkMode) {
+    document.body.classList.add("dark-mode");
+    if (darkModeToggle) {
       const icon = darkModeToggle.querySelector("i");
-      icon.classList.toggle("fa-moon");
-      icon.classList.toggle("fa-sun");
-    });
+      if (icon) {
+        icon.classList.remove("fa-moon");
+        icon.classList.add("fa-sun");
+      }
+    }
   }
-
+  
+  // Toggle dark mode function
+  function toggleDarkMode() {
+    const isDarkModeActive = document.body.classList.contains("dark-mode");
+    
+    if (isDarkModeActive) {
+      // Disable dark mode
+      document.body.classList.remove("dark-mode");
+      localStorage.setItem("darkMode", "disabled");
+      if (darkModeToggle) {
+        const icon = darkModeToggle.querySelector("i");
+        if (icon) {
+          icon.classList.remove("fa-sun");
+          icon.classList.add("fa-moon");
+        }
+      }
+    } else {
+      // Enable dark mode
+      document.body.classList.add("dark-mode");
+      localStorage.setItem("darkMode", "enabled");
+      if (darkModeToggle) {
+        const icon = darkModeToggle.querySelector("i");
+        if (icon) {
+          icon.classList.remove("fa-moon");
+          icon.classList.add("fa-sun");
+        }
+      }
+    }
+  }
+  
+  // Add event listener to dark mode toggle button
+  if (darkModeToggle) {
+    darkModeToggle.addEventListener("click", toggleDarkMode);
+  }
   // Responsive Navigation Menu
   const navToggle = document.createElement("button");
   navToggle.textContent = "☰"; // Hamburger menu icon
